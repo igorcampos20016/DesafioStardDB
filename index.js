@@ -103,7 +103,23 @@ function alocarAnimais(recintos, animais) {
   return 'Todos os animais foram alocados com sucesso';
 }
 
-export default { Bioma, Recinto, Animal, alocarAnimais };
+// Exemplo de uso
+const savanaEReio = new Bioma('Savana e Rio', true, true);
+const floresta = new Bioma('Floresta', false, false);
+
+const recinto1 = new Recinto(savanaEReio, 20);
+const recinto2 = new Recinto(floresta, 10);
+
+const animais = [
+  new Animal('Hipopotamo', 'Herbivoro'),
+  new Animal('Macaco', 'Herbivoro'),
+  new Animal('Leão', 'Carnivoro')
+];
+
+const resultado = alocarAnimais([recinto1, recinto2], animais);
+console.log(resultado);
+
+
 
 
 
